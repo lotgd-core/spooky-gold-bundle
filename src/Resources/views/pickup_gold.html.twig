@@ -1,0 +1,7 @@
+{% trans_default_domain translation_domain %}
+
+{% if cache %}
+    {{ 'pickup_gold.gold'|trans(_context)|colorize }}
+{% else %}
+    {{ 'pickup_gold.cache'|trans(_context)|colorize }}
+{% endif %}

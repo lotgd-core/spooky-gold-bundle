@@ -1,0 +1,7 @@
+{% trans_default_domain translation_domain %}
+
+{% if cache %}
+    {{ 'pickup_gem.gold'|trans(_context)|colorize }}
+{% else %}
+    {{ 'pickup_gem.cache'|trans(_context)|colorize }}
+{% endif %}

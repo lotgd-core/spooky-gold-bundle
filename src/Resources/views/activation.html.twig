@@ -1,0 +1,3 @@
+{% trans_default_domain translation_domain %}
+
+{{ 'activation.paragraph'|trans(_context|merge({ 'race_name': character_race() }))|colorize }}

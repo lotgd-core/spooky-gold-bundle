@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- https://phpunit.readthedocs.io/en/latest/configuration.html -->
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
+    backupGlobals="false"
+    colors="true"
+    bootstrap="tests/bootstrap.php"
+    convertDeprecationsToExceptions="false"
+>
+    <coverage processUncoveredFiles="true">
+        <include>
+            <directory suffix=".php">src</directory>
+        </include>
+
+        <report>
+            <clover outputFile="./build/reports/phpunit.coverage.xml"/>
+            <!-- <html outputDirectory="./build/coverage" lowUpperBound="35" highLowerBound="70" /> -->
+            <!-- <text outputFile="php://stdout" showUncoveredFiles="false"/> -->
+        </report>
+    </coverage>
+
+    <php>
+        <env name="SYMFONY_DEPRECATIONS_HELPER" value="weak" />
+        <env name="BOOTSTRAP_CLEAR_CACHE_ENV" value="test" />
+        <env name="XDEBUG_MODE" value="coverage"/>
+        <ini name="error_reporting" value="-1" />
+        <ini name="xdebug.mode" value="coverage"/>
+        <server name="APP_ENV" value="test" force="true" />
+        <server name="SHELL_VERBOSITY" value="-1" />
+        <server name="SYMFONY_PHPUNIT_REMOVE" value="" />
+        <server name="SYMFONY_PHPUNIT_VERSION" value="9.5" />
+    </php>
+
+    <testsuites>
+        <testsuite name="Lotgd Core Occurrence Bundle Test Suite">
+            <directory>tests</directory>
+        </testsuite>
+    </testsuites>
+
+    <logging>
+        <junit outputFile="./build/reports/phpunit.xml"/>
+    </logging>
+
+    <listeners>
+        <listener class="Symfony\Bridge\PhpUnit\SymfonyTestsListener" />
+    </listeners>
+
+    <!-- Run `composer require symfony/panther` before enabling this extension -->
+    <!--
+    <extensions>
+        <extension class="Symfony\Component\Panther\ServerExtension" />
+    </extensions>
+    -->
+</phpunit>

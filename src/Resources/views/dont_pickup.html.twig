@@ -1,0 +1,7 @@
+{% trans_default_domain translation_domain %}
+
+{{ 'dont_pickup.paragraph'|trans(_context)|colorize }}
+
+{% if coward %}
+    {{ 'dont_pickup.coward'|trans(_context)|colorize }}
+{% endif %}
