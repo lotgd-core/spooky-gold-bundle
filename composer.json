@@ -1,6 +1,5 @@
 {
     "name": "lotgd-core/spooky-gold-bundle",
-    "version": "0.1.0",
     "type": "lotgd-bundle",
     "description": "Spooky Gold for LoTGD IDMarinas Edition.",
     "license": "BSD-3-Clause",
